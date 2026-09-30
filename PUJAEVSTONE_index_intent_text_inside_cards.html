@@ -1,0 +1,1664 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A2E28">
+<title>PUJAEVSTONE — украшения из натуральных камней</title>
+<meta name="description" content="Авторские украшения из натуральных камней и индивидуальный подбор — Даниил Пужаев.">
+<style>
+:root {
+  --deep:#0A2E28;
+  --emerald:#0F3D34;
+  --green:#134E43;
+  --cream:#F7F6F1;
+  --paper:#EFEDE5;
+  --white:#FFFFFF;
+  --gold:#C8A96A;
+  --ink:#151A18;
+  --muted:#747A77;
+  --line:rgba(15,61,52,.16);
+  --darkline:rgba(247,246,241,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.5;
+}
+body.lock{overflow:hidden}
+img{display:block;width:100%}
+button,a{font:inherit}
+a{color:inherit}
+button{color:inherit}
+.container{width:min(1240px,calc(100% - 42px));margin:auto}
+.serif{font-family:Georgia,"Times New Roman",serif}
+.kicker{
+  text-transform:uppercase;letter-spacing:.21em;font-size:10px;font-weight:700;
+  color:var(--gold);display:flex;align-items:center;gap:11px
+}
+.kicker:before{content:"";width:26px;height:1px;background:currentColor}
+h1,h2,h3,p{margin-top:0}
+h1{
+  font:400 clamp(28px,4.2vw,60px)/1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;margin:0 0 28px
+}
+h2{
+  font:400 clamp(40px,5.7vw,78px)/.96 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;margin:0 0 24px
+}
+h3{font:400 28px/1.05 Georgia,"Times New Roman",serif}
+.btn{
+  min-height:48px;padding:12px 22px;border:1px solid transparent;
+  display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  cursor:pointer;transition:.25s ease;letter-spacing:.035em;font-size:14px
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-light{background:var(--cream);color:var(--deep)}
+.btn-line{background:transparent;border-color:rgba(247,246,241,.46);color:var(--cream)}
+.btn-dark{background:var(--deep);color:var(--cream)}
+.btn-gold{background:var(--gold);color:#102d26}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:40;
+  background:rgba(10,46,40,.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(247,246,241,.12)
+}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--cream)}
+.logo{text-decoration:none;font:500 19px Georgia,serif;letter-spacing:.13em}
+.logo i{font-style:normal;color:var(--gold)}
+.menu{display:flex;align-items:center;gap:28px;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.menu a{text-decoration:none;opacity:.8}
+.menu a:hover{opacity:1}
+.cart-top{
+  border:1px solid rgba(247,246,241,.25);background:transparent;color:var(--cream);
+  min-height:38px;padding:7px 14px;cursor:pointer;position:relative
+}
+.cart-count{
+  position:absolute;right:-8px;top:-8px;width:19px;height:19px;border-radius:50%;
+  display:grid;place-items:center;background:var(--gold);color:var(--deep);
+  font-size:10px;font-weight:800
+}
+
+/* HERO */
+.hero{min-height:100svh;background:var(--deep);color:var(--cream);padding:112px 0 56px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+.hero-copy{position:relative;z-index:2}
+.hero-copy p{max-width:560px;color:rgba(247,246,241,.72);font-size:16px;margin-bottom:34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+.hero-image{
+  min-height:720px;position:relative;overflow:hidden;
+  border-radius:0 0 170px 0
+}
+.hero-image img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:center}
+.hero-image:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(10,46,40,.26),transparent 45%),linear-gradient(0deg,rgba(10,46,40,.3),transparent 40%)
+}
+.hero-vertical{
+  position:absolute;z-index:2;right:18px;top:24px;writing-mode:vertical-rl;
+  text-transform:uppercase;letter-spacing:.22em;font-size:9px;color:rgba(247,246,241,.75)
+}
+.hero-caption{
+  position:absolute;z-index:2;left:24px;bottom:24px;padding:12px 14px;
+  border-left:1px solid var(--gold);font-size:12px;color:rgba(247,246,241,.82)
+}
+
+/* MANIFESTO */
+.manifesto{padding:112px 0;background:var(--cream)}
+.manifesto-inner{max-width:980px;margin:auto;text-align:center}
+.manifesto .kicker{justify-content:center;margin-bottom:22px}
+.manifesto .kicker:before{display:none}
+.manifesto h2{font-size:clamp(30px,4.2vw,56px)}
+.manifesto p{max-width:700px;margin:0 auto;color:var(--muted)}
+
+/* LOOKBOOK */
+.lookbook{padding:0 0 112px;background:var(--cream)}
+.lookbook-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:28px}
+.lookbook-head p{max-width:470px;color:var(--muted);margin:0}
+.lookbook-track{
+  display:grid;grid-template-columns:1.15fr .85fr .85fr 1.15fr;gap:8px;
+  min-height:460px
+}
+.lookbook-item{position:relative;overflow:hidden;background:#ddd}
+.lookbook-item img{height:100%;object-fit:cover}
+.lookbook-item:nth-child(2),.lookbook-item:nth-child(3){margin-top:58px}
+.lookbook-note{
+  position:absolute;left:14px;bottom:14px;background:rgba(247,246,241,.88);
+  backdrop-filter:blur(9px);padding:9px 11px;font-size:10px;letter-spacing:.12em;text-transform:uppercase
+}
+
+/* INTENT */
+.intent{background:var(--white);padding:110px 0}
+.intent-head{max-width:880px;margin-bottom:46px}
+.intent-head p{color:var(--muted);max-width:620px}
+.intent-wrap{position:relative}
+.intent-grid{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:4px 2px 14px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--gold) transparent;
+}
+.intent-grid::-webkit-scrollbar{height:6px}
+.intent-grid::-webkit-scrollbar-track{background:transparent}
+.intent-grid::-webkit-scrollbar-thumb{background:var(--gold);border-radius:999px}
+.intent-card{
+  flex:0 0 clamp(270px,28vw,360px);
+  min-height:390px;
+  padding:26px;
+  border:1px solid var(--line);
+  background:var(--white);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  text-align:left;
+  cursor:pointer;
+  scroll-snap-align:start;
+  transition:.25s ease;
+}
+.intent-card:hover{background:var(--paper);transform:translateY(-2px)}
+.intent-card.active{
+  background:var(--deep);
+  color:var(--cream);
+  border-color:var(--deep);
+}
+.intent-card small{color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:9px}
+.intent-card.active small{color:rgba(247,246,241,.58)}
+.intent-card strong{font:400 clamp(27px,3vw,43px)/.95 Georgia,serif;letter-spacing:-.03em}
+.intent-card span{font-size:12px;color:var(--muted)}
+.intent-card.active span{color:var(--gold)}
+.intent-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+.intent-arrow{
+  width:44px;height:44px;border:1px solid var(--line);background:var(--white);
+  cursor:pointer;font-size:20px;display:grid;place-items:center;transition:.2s
+}
+.intent-arrow:hover{background:var(--paper)}
+.intent-selected{margin-top:18px;font-size:13px;color:var(--muted)}
+.intent-selected b{color:var(--deep)}
+
+
+
+/* OTHER JEWELRY */
+.other-jewelry{padding:96px 0;background:var(--white)}
+.other-jewelry-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:32px}
+.other-jewelry-head p{max-width:500px;color:var(--muted);margin:0}
+.other-jewelry-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.other-jewelry-card{
+  min-height:280px;border:1px solid var(--line);background:var(--cream);padding:28px;
+  display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;
+  transition:.25s ease
+}
+.other-jewelry-card:hover{background:var(--paper);transform:translateY(-2px)}
+.other-jewelry-card small{font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold)}
+.other-jewelry-card strong{font:400 clamp(30px,3.4vw,48px)/.96 Georgia,serif;letter-spacing:-.03em}
+.other-jewelry-card span{font-size:12px;color:var(--muted)}
+@media(max-width:720px){
+  .other-jewelry{padding:72px 0}
+  .other-jewelry-head{align-items:start;flex-direction:column}
+  .other-jewelry-grid{grid-template-columns:1fr}
+  .other-jewelry-card{min-height:210px}
+}
+
+/* COLLECTIONS */
+.collections{padding:112px 0;background:var(--paper)}
+.collections-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.collections-head p{max-width:500px;color:var(--muted);margin:0}
+.collections-track{
+  display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:4px 2px 14px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent
+}
+.collections-track::-webkit-scrollbar{height:6px}
+.collections-track::-webkit-scrollbar-thumb{background:var(--gold);border-radius:999px}
+.collection-card{
+  flex:0 0 clamp(250px,26vw,330px);min-height:320px;scroll-snap-align:start;
+  border:1px solid var(--line);background:var(--white);padding:24px;
+  display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;
+  transition:.25s ease;position:relative;overflow:hidden
+}
+.collection-card:before{
+  content:"";position:absolute;inset:auto -70px -90px auto;width:180px;height:180px;
+  border:1px solid rgba(200,169,106,.35);border-radius:50%
+}
+.collection-card:hover{transform:translateY(-3px);background:var(--cream)}
+.collection-card.active{background:var(--deep);color:var(--cream);border-color:var(--deep)}
+.collection-card small{font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold)}
+.collection-card strong{font:400 clamp(30px,3.1vw,44px)/.95 Georgia,serif;letter-spacing:-.03em;position:relative;z-index:1}
+.collection-card span{font-size:11px;color:var(--muted);position:relative;z-index:1}
+.collection-card.active span{color:rgba(247,246,241,.68)}
+.collection-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.collection-arrow{
+  width:44px;height:44px;border:1px solid var(--line);background:var(--white);
+  cursor:pointer;font-size:20px;display:grid;place-items:center
+}
+.collection-selected{margin-top:16px;font-size:13px;color:var(--muted)}
+.collection-selected b{color:var(--deep)}
+@media(max-width:720px){
+  .collections{padding:78px 0}
+  .collections-head{align-items:start;flex-direction:column}
+  .collection-card{flex-basis:78vw;min-height:250px}
+}
+
+/* CATALOG */
+.catalog{padding:112px 0;background:var(--paper)}
+.catalog-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+.catalog-head p{max-width:470px;color:var(--muted);margin:0}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product-card{min-width:0}
+.product-photo{
+  position:relative;width:100%;border:0;padding:0;background:#ddd;cursor:pointer;
+  aspect-ratio:4/5;overflow:hidden
+}
+.product-photo img{height:100%;object-fit:cover;transition:.55s ease}
+.product-photo:hover img{transform:scale(1.025)}
+.photo-mark{
+  position:absolute;right:10px;bottom:10px;background:rgba(247,246,241,.9);
+  padding:6px 8px;font-size:9px;letter-spacing:.14em
+}
+.product-meta{
+  min-height:50px;border-bottom:1px solid var(--line);display:flex;align-items:center;
+  justify-content:space-between;gap:12px;font-size:10px;text-transform:uppercase;letter-spacing:.12em
+}
+.product-meta>span{color:var(--muted)}
+.text-button{
+  border:0;background:transparent;padding:0;cursor:pointer;text-transform:uppercase;
+  letter-spacing:.12em;font-size:10px;border-bottom:1px solid currentColor
+}
+
+/* SELECTION */
+.selection{background:var(--deep);color:var(--cream);padding:112px 0}
+.selection-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.selection-image{height:640px;overflow:hidden}
+.selection-image img{height:100%;object-fit:cover}
+.selection-copy p{color:rgba(247,246,241,.7);max-width:620px}
+.steps{margin:34px 0;counter-reset:steps}
+.step{
+  display:grid;grid-template-columns:44px 1fr;gap:13px;padding:17px 0;
+  border-top:1px solid var(--darkline)
+}
+.step:last-child{border-bottom:1px solid var(--darkline)}
+.step:before{
+  counter-increment:steps;content:"0" counter(steps);color:var(--gold);font:400 20px Georgia,serif
+}
+.step b{display:block;margin-bottom:4px;font-weight:600}
+.step span{font-size:12px;color:rgba(247,246,241,.64)}
+.extras{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0}
+.extra{border:1px solid var(--darkline);padding:8px 12px;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:#d6dfdb}
+
+
+/* ENHANCERS */
+.enhancers{padding:112px 0;background:var(--white)}
+.enhancers-head{max-width:860px;margin-bottom:44px}
+.enhancers-head p{color:var(--muted);max-width:720px}
+.enhancer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.enhancer-card{border:1px solid var(--line);padding:28px;background:var(--cream);display:flex;flex-direction:column;min-height:100%}
+.enhancer-card.dark{background:var(--deep);color:var(--cream);border-color:var(--deep)}
+.enhancer-card .tag{font-size:9px;text-transform:uppercase;letter-spacing:.17em;color:var(--gold);margin-bottom:18px}
+.enhancer-card h3{font-size:34px;margin-bottom:12px}
+.enhancer-card p{font-size:13px;color:var(--muted)}
+.enhancer-card.dark p{color:rgba(247,246,241,.68)}
+.enhancer-price{font:400 26px Georgia,serif;color:var(--deep);margin:8px 0 20px}
+.enhancer-card.dark .enhancer-price{color:var(--gold)}
+.enhancer-list{margin:0 0 22px;padding-left:18px;color:var(--muted);font-size:13px}
+.enhancer-card.dark .enhancer-list{color:rgba(247,246,241,.68)}
+.enhancer-list li{margin:7px 0}
+.enhancer-card .btn{margin-top:auto}
+.enhancer-note{margin-top:20px;font-size:11px;color:var(--muted);max-width:860px}
+@media(max-width:980px){.enhancer-grid{grid-template-columns:1fr}}
+@media(max-width:720px){.enhancers{padding:78px 0}}
+
+/* ABOUT */
+.about{padding:112px 0;background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-image{height:690px;overflow:hidden}
+.about-image img{height:100%;object-fit:cover}
+.about-copy p{color:#59635f;max-width:690px}
+.quote{
+  font:italic 400 clamp(24px,3.2vw,42px)/1.15 Georgia,serif;color:var(--deep);
+  padding:25px 0 25px 26px;border-left:1px solid var(--gold);margin:30px 0
+}
+
+/* VIDEO */
+.video-block{background:#0C0F0E;color:var(--cream);padding:0}
+.video-inner{min-height:520px;position:relative;overflow:hidden;display:flex;align-items:end}
+.video-inner img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:center 36%;filter:grayscale(.2) brightness(.42)}
+.video-inner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,15,14,.82),rgba(12,15,14,.18))}
+.video-copy{position:relative;z-index:2;padding:66px 0;max-width:650px}
+.video-copy p{color:rgba(247,246,241,.68);max-width:500px}
+.disabled-btn{opacity:.55;cursor:pointer}
+
+
+/* APPLICATION FORM */
+.application{padding:112px 0;background:var(--paper)}
+.application-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:70px;align-items:start}
+.application-copy p{color:var(--muted);max-width:560px}
+.application-card{background:var(--white);border:1px solid var(--line);padding:30px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.field input,.field select,.field textarea{
+  width:100%;border:1px solid var(--line);background:var(--cream);color:var(--ink);
+  padding:13px 14px;font:inherit;border-radius:0;outline:none
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{min-height:130px;resize:vertical}
+.form-hint{font-size:11px;color:var(--muted);margin:13px 0 0}
+.application-card .btn{margin-top:20px;width:100%}
+@media(max-width:980px){.application-grid{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .application{padding:78px 0}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .application-card{padding:20px}
+}
+
+
+/* PRACTICES */
+.practices{padding:112px 0;background:var(--cream)}
+.practices-head{max-width:850px;margin-bottom:42px}
+.practices-head p{color:var(--muted);max-width:680px}
+.practices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.practice-card{border:1px solid var(--line);background:var(--white);padding:28px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between}
+.practice-card h3{font-size:34px;margin-bottom:12px}
+.practice-card p{color:var(--muted);font-size:13px}
+.practice-card .btn{margin-top:20px;align-self:flex-start}
+@media(max-width:980px){.practices-grid{grid-template-columns:1fr}}
+@media(max-width:720px){.practices{padding:78px 0}}
+
+/* CONTACTS */
+.contacts{padding:105px 0;background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end}
+.contact-grid p{color:var(--muted);max-width:590px}
+.contact-links{display:grid;border-top:1px solid var(--line)}
+.contact-links a{
+  text-decoration:none;padding:16px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;font-size:13px
+}
+.contact-links a span:last-child{color:var(--gold)}
+footer{background:var(--deep);color:rgba(247,246,241,.65);padding:30px 0;font-size:11px;letter-spacing:.08em}
+.footer-row{display:flex;justify-content:space-between;gap:20px}
+
+/* OVERLAYS */
+.backdrop{position:fixed;inset:0;background:rgba(5,18,15,.68);z-index:70;opacity:0;pointer-events:none;transition:.25s}
+.backdrop.show{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;z-index:80;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--cream);
+  transform:translateX(105%);transition:.3s ease;display:flex;flex-direction:column
+}
+.drawer.open{transform:none}
+.drawer-head{padding:22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.drawer-head strong{font:400 30px Georgia,serif}
+.icon-btn{border:0;background:transparent;font-size:25px;cursor:pointer}
+.cart-items{padding:18px;overflow:auto;flex:1}
+.cart-empty{padding:50px 10px;text-align:center;color:var(--muted)}
+.cart-item{display:grid;grid-template-columns:74px 1fr auto;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.cart-item img{width:74px;height:84px;object-fit:cover}
+.cart-item b{display:block;font:400 18px Georgia,serif}
+.cart-item span{font-size:10px;color:var(--muted)}
+.drawer-foot{padding:18px;border-top:1px solid var(--line)}
+.drawer-foot p{font-size:11px;color:var(--muted)}
+.drawer-foot .btn{width:100%}
+
+.modal{position:fixed;z-index:90;inset:0;display:grid;place-items:center;padding:18px;opacity:0;pointer-events:none;transition:.25s}
+.modal.show{opacity:1;pointer-events:auto}
+.modal-card{width:min(850px,100%);background:var(--cream);display:grid;grid-template-columns:1.1fr .9fr;position:relative;max-height:92vh;overflow:auto}
+.modal-img{min-height:550px;height:100%;object-fit:cover}
+.modal-copy{padding:36px;display:flex;flex-direction:column;justify-content:center}
+.modal-copy h3{font-size:39px;margin:9px 0 16px}
+.modal-copy p{color:var(--muted)}
+.modal-close{position:absolute;right:10px;top:10px;width:38px;height:38px;border:0;background:rgba(247,246,241,.92);cursor:pointer;z-index:2}
+.toast{
+  position:fixed;z-index:120;left:50%;bottom:24px;transform:translate(-50%,20px);
+  background:#121917;color:var(--cream);padding:11px 17px;opacity:0;pointer-events:none;
+  transition:.25s;font-size:12px
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:1;transform:none}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero-grid,.selection-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-grid{gap:35px}
+  .hero-image{min-height:650px}
+  .products{grid-template-columns:repeat(3,1fr)}
+  .selection-image,.about-image{height:580px}
+  .contact-grid{gap:35px}
+}
+@media(max-width:720px){
+  .container{width:min(100% - 26px,1240px)}
+  .menu{display:none}
+  .nav{height:62px}
+  .hero{padding-top:88px}
+  h1{font-size:clamp(28px,8.5vw,42px)}
+  .hero-image{min-height:510px;border-radius:0 0 90px 0}
+  .hero-caption{left:14px;bottom:14px}
+  .manifesto,.intent,.catalog,.selection,.about,.contacts{padding:78px 0}
+  .lookbook{padding-bottom:78px}
+  .lookbook-head,.catalog-head{align-items:start;flex-direction:column}
+  .lookbook-track{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;
+    padding-bottom:8px
+  }
+  .lookbook-item{min-width:72vw;height:390px;scroll-snap-align:start}
+  .lookbook-item:nth-child(2),.lookbook-item:nth-child(3){margin-top:0}
+  .intent-card{flex-basis:84vw;min-height:420px}
+  .intent-card{min-height:180px;padding:20px}
+  .intent-card strong{font-size:27px}
+  .products{grid-template-columns:repeat(2,1fr);gap:9px}
+  .product-meta{min-height:45px;align-items:flex-start;flex-direction:column;justify-content:center;gap:4px}
+  .selection-image,.about-image{height:470px}
+  .video-inner{min-height:460px}
+  .video-copy{padding:46px 0}
+  .footer-row{flex-direction:column}
+  .modal-card{grid-template-columns:1fr}
+  .modal-img{min-height:350px;max-height:410px}
+  .modal-copy{padding:24px}
+}
+
+/* Mobile horizontal overflow fix */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+main, section, header, footer {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+.container {
+  max-width: 100%;
+}
+img {
+  max-width: 100%;
+}
+.hero-grid,
+.lookbook-track,
+.intent-grid,
+.products,
+.selection-grid,
+.about-grid,
+.contact-grid {
+  min-width: 0;
+}
+.hero-copy,
+.hero-image,
+.selection-copy,
+.selection-image,
+.about-copy,
+.about-image {
+  min-width: 0;
+}
+@media(max-width:720px){
+  .container{
+    width: calc(100% - 26px) !important;
+    max-width: calc(100% - 26px) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .hero-vertical{
+    right: 8px;
+  }
+  .lookbook-track{
+    width:100%;
+    max-width:100%;
+  }
+  .lookbook-item{
+    flex:0 0 78%;
+    min-width:0;
+  }
+  .modal,
+  .drawer{
+    max-width:100vw;
+  }
+}
+
+
+.lookbook-head h2{
+  font-size:clamp(28px,3.8vw,50px);
+}
+
+
+.intent-head h2{
+  font-size:clamp(28px,3.8vw,50px);
+}
+
+
+/* PUJAEVSTONE ASSISTANT */
+.ps-assist-fab{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:140;
+  border:1px solid rgba(200,169,106,.7);
+  background:var(--deep);
+  color:var(--cream);
+  min-height:52px;
+  padding:13px 18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  box-shadow:0 16px 45px rgba(5,27,23,.28);
+  letter-spacing:.02em;
+}
+.ps-assist-fab b{
+  color:var(--gold);
+  font:500 18px Georgia,serif;
+}
+.ps-assist-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:160;
+  background:rgba(3,20,17,.68);
+  backdrop-filter:blur(7px);
+  opacity:0;
+  pointer-events:none;
+  transition:.25s ease;
+}
+.ps-assist-backdrop.show{
+  opacity:1;
+  pointer-events:auto;
+}
+.ps-assist-panel{
+  position:fixed;
+  z-index:170;
+  right:18px;
+  bottom:18px;
+  width:min(560px,calc(100vw - 36px));
+  max-height:min(820px,calc(100svh - 36px));
+  background:linear-gradient(180deg,#0b3a34,#062f2a);
+  color:#f3f0e7;
+  border:1px solid rgba(199,163,90,.34);
+  box-shadow:0 30px 100px rgba(0,0,0,.38);
+  transform:translateY(24px) scale(.985);
+  opacity:0;
+  pointer-events:none;
+  transition:.28s ease;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.ps-assist-panel.show{
+  transform:none;
+  opacity:1;
+  pointer-events:auto;
+}
+.ps-assist-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:16px 18px;
+  border-bottom:1px solid rgba(199,163,90,.24);
+}
+.ps-assist-brand{
+  font:600 15px Georgia,serif;
+  letter-spacing:.12em;
+}
+.ps-assist-brand span{color:#c7a35a}
+.ps-assist-close{
+  width:36px;height:36px;border:1px solid rgba(243,240,231,.2);
+  background:transparent;color:#f3f0e7;cursor:pointer;font-size:22px;
+}
+.ps-assist-body{
+  overflow:auto;
+  padding:28px 26px 30px;
+}
+.ps-assist-eyebrow{
+  display:flex;align-items:center;gap:10px;
+  color:#c7a35a;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:10px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.ps-assist-eyebrow:before{
+  content:"";width:25px;height:1px;background:#c7a35a;
+}
+.ps-assist-title{
+  margin:0 0 12px;
+  font:500 clamp(31px,5vw,48px)/1.02 Georgia,serif;
+  letter-spacing:-.035em;
+}
+.ps-assist-lead{
+  color:#c8ccc5;
+  margin:0 0 22px;
+  font-size:14px;
+  line-height:1.55;
+}
+.ps-assist-options{
+  display:grid;
+  gap:9px;
+}
+.ps-assist-option{
+  width:100%;
+  min-height:54px;
+  border:1px solid rgba(243,240,231,.23);
+  background:transparent;
+  color:#f3f0e7;
+  padding:13px 42px 13px 14px;
+  text-align:left;
+  cursor:pointer;
+  position:relative;
+  line-height:1.35;
+  transition:.2s ease;
+}
+.ps-assist-option:after{
+  content:"→";
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#c7a35a;
+  font-size:18px;
+}
+.ps-assist-option:hover{
+  border-color:#c7a35a;
+  background:rgba(199,163,90,.07);
+}
+.ps-assist-option.primary{
+  background:#f2efe6;
+  color:#17322e;
+  border-color:#f2efe6;
+}
+.ps-assist-option.accent{
+  color:#c7a35a;
+  border-color:#c7a35a;
+}
+.ps-assist-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:20px;
+}
+.ps-assist-actions .btn{
+  min-height:44px;
+  padding:10px 15px;
+}
+.ps-assist-back{
+  border:0;
+  background:transparent;
+  color:#c8ccc5;
+  padding:0;
+  cursor:pointer;
+  font-size:12px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.ps-assist-result{
+  border-left:1px solid #c7a35a;
+  padding:15px 0 15px 16px;
+  color:#c8ccc5;
+  margin:16px 0 0;
+}
+.ps-assist-result strong{
+  color:#f3f0e7;
+  display:block;
+  margin-bottom:5px;
+  font:500 21px Georgia,serif;
+}
+.ps-assist-mini{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(199,163,90,.18);
+  font-size:11px;
+  color:#aeb8b3;
+}
+@media(max-width:720px){
+  .ps-assist-fab{
+    right:14px;
+    bottom:14px;
+    min-height:48px;
+    padding:11px 14px;
+  }
+  .ps-assist-panel{
+    inset:0;
+    width:100%;
+    max-height:none;
+    height:100svh;
+    border:0;
+  }
+  .ps-assist-body{
+    padding:24px 18px 28px;
+  }
+}
+
+
+/* CONTACT CHOICE */
+.contact-choice{
+  position:fixed;
+  inset:0;
+  z-index:220;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  opacity:0;
+  pointer-events:none;
+  transition:.22s ease;
+}
+.contact-choice.show{
+  opacity:1;
+  pointer-events:auto;
+}
+.contact-choice-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(3,20,17,.72);
+  backdrop-filter:blur(7px);
+}
+.contact-choice-card{
+  position:relative;
+  z-index:1;
+  width:min(440px,100%);
+  background:var(--deep);
+  color:var(--cream);
+  border:1px solid rgba(200,169,106,.45);
+  padding:28px;
+  box-shadow:0 28px 90px rgba(0,0,0,.35);
+}
+.contact-choice-card h3{
+  margin:0 0 10px;
+  font:500 34px/1.04 Georgia,serif;
+}
+.contact-choice-card p{
+  margin:0 0 22px;
+  color:rgba(247,246,241,.7);
+  font-size:13px;
+}
+.contact-choice-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.contact-choice-buttons a{
+  min-height:50px;
+}
+.contact-choice-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(247,246,241,.2);
+  background:transparent;
+  color:var(--cream);
+  cursor:pointer;
+  font-size:20px;
+}
+@media(max-width:520px){
+  .contact-choice-buttons{grid-template-columns:1fr}
+}
+
+
+.intent-description{
+  margin-top:22px;
+  padding:22px 24px;
+  border:1px solid var(--line);
+  background:var(--cream);
+  color:var(--ink);
+  display:none;
+}
+.intent-description.show{display:block}
+.intent-description h3{
+  margin:0 0 10px;
+  font:400 28px/1.05 Georgia,"Times New Roman",serif;
+}
+.intent-description p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.65;
+  font-size:14px;
+}
+@media(max-width:720px){
+  .intent-description{padding:18px}
+  .intent-description h3{font-size:24px}
+}
+
+
+.intent-card .intent-card-desc{
+  margin:14px 0 0;
+  font-size:13px;
+  line-height:1.55;
+  color:var(--muted);
+  max-width:100%;
+}
+.intent-card.active .intent-card-desc{
+  color:rgba(247,246,241,.74);
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top">PUJAEV<i>STONE</i></a>
+    <nav class="menu">
+      <a href="#catalog">Каталог</a>
+      <a href="#other-jewelry">Другие украшения</a>
+      <a href="#intent">По намерению</a>
+      <a href="#selection">Индивидуально</a>
+      <a href="#enhancers">Усилители</a>
+      <a href="#practices">Практики</a>
+      <a href="#application">Заявка</a>
+      <a href="#about">О Данииле</a>
+    </nav>
+    
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="kicker">Авторские талисманы</span>
+      <h1>Талисманы<br>для тех, кто<br>выбирает силу осознанно.</h1>
+      <p>Украшения, которые держат твой ритм.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light"href="#" onclick="openContactChoice(event)">Создать своё украшение</a>
+        <a class="btn btn-line" href="#catalog">Смотреть каталог</a>
+      </div>
+    </div>
+    <div class="hero-image reveal">
+      <img src="photo_01.jpg" alt="Даниил Пужаев" fetchpriority="high" decoding="async">
+      <div class="hero-vertical">PUJAEVSTONE · NATURAL STONES · INDIVIDUAL WORK</div>
+      <div class="hero-caption">Даниил Пужаев · автор украшений</div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="container manifesto-inner reveal">
+    <span class="kicker">О бренде</span>
+    <h2>PUJAEVSTONE — создаёт состояние.</h2>
+    <p>Талисманы для тех, кто выбирает силу осознанно.</p>
+  </div>
+</section>
+
+<section class="lookbook">
+  <div class="container">
+    <div class="lookbook-head reveal">
+      <div>
+        <span class="kicker">Lookbook</span>
+        <h2>Украшения PUJAEVSTONE</h2>
+      </div>
+      <p>Примеры готовых изделий из натуральных камней.</p>
+    </div>
+    <div class="lookbook-track">
+      <div class="lookbook-item reveal"><img src="photo_02.jpg" alt="Украшение из натуральных камней" loading="lazy" decoding="async"><span class="lookbook-note">Натуральные камни</span></div>
+      <div class="lookbook-item reveal"><img src="photo_03.jpg" alt="Украшение из натуральных камней" loading="lazy" decoding="async"><span class="lookbook-note">Детали</span></div>
+      <div class="lookbook-item reveal"><img src="photo_04.jpg" alt="Украшение из натуральных камней" loading="lazy" decoding="async"><span class="lookbook-note">Фактура</span></div>
+      <div class="lookbook-item reveal"><img src="photo_05.jpg" alt="Украшение из натуральных камней" loading="lazy" decoding="async"><span class="lookbook-note">Характер</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="intent" id="intent">
+  <div class="container">
+    <div class="intent-head reveal">
+      <span class="kicker">Индивидуальный подбор</span>
+      <h2>Выберите направление запроса</h2>
+      <p>Выберите то, что сейчас для вас важнее всего. Этот запрос станет ориентиром для подбора камней и дальнейшего обсуждения со мной.</p>
+    </div>
+
+    <div class="intent-wrap">
+      <div class="intent-grid" id="intentCarousel">
+        <button class="intent-card reveal" type="button" data-intent="Защита" onclick="chooseIntent(this)">
+          <small>01 · запрос</small><strong>Защита</strong><p class="intent-card-desc">Это для тех, кто каждый день будто в обороне: коллеги давят, родственники обижают, в ленте сплошной негатив — и к вечеру ты пустой. Талисман тут не про «сражаться», а про «мне не надо всё это тащить». Это как плотные шторы: снаружи шум, а внутри — спокойно, твои силы остаются при тебе. Подойдёт, если хочется просто выдохнуть и не отдавать энергию тем, кто её тянет.</p><span>Выбрать →</span></button>
+        <button class="intent-card reveal" type="button" data-intent="Финансы" onclick="chooseIntent(this)">
+          <small>02 · запрос</small><strong>Финансы</strong><p class="intent-card-desc">Для тех, кто пашет, но деньги будто утекают сквозь пальцы, кто боится поднять чек и не видит возможностей там, где они есть. Талисман помогает держать фокус: чтобы усилия окупались, а ресурсы работали на тебя, а не против.</p><span>Выбрать →</span></button>
+        <button class="intent-card reveal" type="button" data-intent="Любовь" onclick="chooseIntent(this)">
+          <small>03 · запрос</small><strong>Любовь</strong><p class="intent-card-desc">Для тех, кому не хватает простого тепла, кто обжигался и теперь боится доверять, или кто застрял в отношениях без нежности. Талисман снимает внутреннее напряжение: чтобы ты смог впустить в жизнь то, что по-настоящему ценно.</p><span>Выбрать →</span></button>
+        <button class="intent-card reveal" type="button" data-intent="Удача" onclick="chooseIntent(this)">
+          <small>04 · запрос</small><strong>Удача</strong><p class="intent-card-desc">Для тех, кто вечно оказывается «почти вовремя», но пропускает шансы из-за сомнений и чувствует, что удача всегда на шаг впереди. Талисман ловит нужный момент: помогает замечать возможности и действовать без промедления, развивает решимость.</p><span>Выбрать →</span></button>
+        <button class="intent-card reveal" type="button" data-intent="Самореализация" onclick="chooseIntent(this)">
+          <small>05 · запрос</small><strong>Самореализация</strong><p class="intent-card-desc">Для тех, кто знает, что способен на большее, но теряется в выборе, откладывает старт и не может довести дело до конца. Талисман возвращает ясность и энергию: чтобы ты чётко видел свой путь и уверенно его проходил.</p><span>Выбрать →</span></button>
+        <button class="intent-card reveal" type="button" data-intent="Духовное развитие" onclick="chooseIntent(this)">
+          <small>06 · запрос</small><strong>Духовное развитие</strong><p class="intent-card-desc">Талисман для того, чтобы получать важный опыт для души и взращивать свой Дух, исцеляя гордыню.</p><span>Выбрать →</span></button>
+        <button class="intent-card reveal" type="button" data-intent="Исполнение желаний" onclick="chooseIntent(this)">
+          <small>07 · запрос</small><strong>Исполнение желаний</strong><span>Выбрать →</span></button>
+      </div>
+
+      <div class="intent-controls">
+        <button class="intent-arrow" type="button" onclick="scrollIntent(-1)" aria-label="Назад">←</button>
+        <button class="intent-arrow" type="button" onclick="scrollIntent(1)" aria-label="Вперёд">→</button>
+      </div>
+
+      <div class="intent-selected" id="intentSelected">Можно пролистывать вправо и выбрать нужный запрос.</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="collections" id="catalog">
+  <div class="container">
+    <div class="collections-head reveal">
+      <div>
+        <span class="kicker">Коллекции</span>
+        <h2 style="font-size:clamp(30px,4vw,52px)">Выберите коллекцию</h2>
+      </div>
+      <p>Фотографии изделий пока убрали. Сейчас оставляем только структуру коллекций — наполнение добавим позже.</p>
+    </div>
+
+    <div class="collections-track" id="collectionsCarousel">
+      <button class="collection-card reveal" type="button" data-collection="Classic" onclick="chooseCollection(this)">
+        <small>01 · коллекция</small>
+        <strong>Classic</strong>
+        <span>Выбрать →</span>
+      </button>
+
+      <button class="collection-card reveal" type="button" data-collection="Браслет с ДЗИ" onclick="chooseCollection(this)">
+        <small>02 · коллекция</small>
+        <strong>Браслет с ДЗИ</strong>
+        <span>Выбрать →</span>
+      </button>
+
+      <button class="collection-card reveal" type="button" data-collection="Premium" onclick="chooseCollection(this)">
+        <small>03 · коллекция</small>
+        <strong>Premium</strong>
+        <span>Выбрать →</span>
+      </button>
+
+      <button class="collection-card reveal" type="button" data-collection="Premium ДЗИ" onclick="chooseCollection(this)">
+        <small>04 · коллекция</small>
+        <strong>Premium ДЗИ</strong>
+        <span>Выбрать →</span>
+      </button>
+
+      <button class="collection-card reveal" type="button" data-collection="Premium +" onclick="chooseCollection(this)">
+        <small>05 · коллекция</small>
+        <strong>Premium +</strong>
+        <span>Выбрать →</span>
+      </button>
+
+      <button class="collection-card reveal" type="button" data-collection="Celebrity" onclick="chooseCollection(this)">
+        <small>06 · коллекция</small>
+        <strong>Celebrity</strong>
+        <span>Выбрать →</span>
+      </button>
+    </div>
+
+    <div class="collection-controls">
+      <button class="collection-arrow" type="button" onclick="scrollCollections(-1)" aria-label="Назад">←</button>
+      <button class="collection-arrow" type="button" onclick="scrollCollections(1)" aria-label="Вперёд">→</button>
+    </div>
+
+    <div class="collection-selected" id="collectionSelected">Пролистайте вправо и выберите коллекцию.</div>
+  </div>
+</section>
+
+<section class="other-jewelry" id="other-jewelry">
+  <div class="container">
+    <div class="other-jewelry-head reveal">
+      <div>
+        <span class="kicker">Другие украшения</span>
+        <h2 style="font-size:clamp(30px,4vw,52px)">Украшения на шею и серьги</h2>
+      </div>
+      <p>Отдельное направление вне коллекций браслетов. Фотографии и конкретные изделия добавим позже.</p>
+    </div>
+
+    <div class="other-jewelry-grid">
+      <button class="other-jewelry-card reveal" type="button">
+        <small>01 · категория</small>
+        <strong>Украшения на шею</strong>
+        <span>Изделия добавим позже →</span>
+      </button>
+
+      <button class="other-jewelry-card reveal" type="button">
+        <small>02 · категория</small>
+        <strong>Серьги</strong>
+        <span>Изделия добавим позже →</span>
+      </button>
+      <button class="other-jewelry-card reveal" type="button">
+        <small>03 · категория</small>
+        <strong>Чётки</strong>
+        <span>Изделия добавим позже →</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="selection" id="selection">
+  <div class="container selection-grid">
+    <div class="selection-image reveal">
+      <img src="photo_04.jpg" alt="Украшение из натуральных камней" loading="lazy" decoding="async">
+    </div>
+    <div class="selection-copy reveal">
+      <span class="kicker">Персональная работа</span>
+      <h2>Персональный подбор минералов и камней</h2>
+      <p>Каждый камень имеет свой характер. Чтобы человек и изделие «сошлись характерами», Я подбираю сочетание минералов индивидуально.</p>
+      <p>Можно выбрать полный персональный подбор или только те параметры, которые сейчас для вас важнее всего.</p>
+      <div class="extras">
+        <span class="extra">Очищение — без доплаты</span>
+        <span class="extra">Зарядка — 5 000 ₽</span>
+        <span class="extra">Подбор — от 500 ₽</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#application">Оставить заявку</a>
+        <a class="btn btn-line" href="#enhancers">Подробнее об усилителях</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="enhancers" id="enhancers">
+  <div class="container">
+    <div class="enhancers-head reveal">
+      <span class="kicker">Работа с изделием</span>
+      <h2>Очищение, зарядка и персональный подбор</h2>
+      <p>Три формата работы с камнями, которые я использую в своих изделиях.</p>
+    </div>
+
+    <div class="enhancer-grid">
+      <article class="enhancer-card reveal">
+        <div class="tag">Входит в каждое изделие</div>
+        <h3>Очищение камня</h3>
+        <p>Камни могут накапливать энергетику во время взаимодействия с людьми.</p>
+        <p>Поэтому перед передачей изделия я провожу очищение — «обнуляю» камни и подготавливаю их к новому владельцу.</p>
+        <p><strong>Очищение — мой принцип работы, поэтому отдельно за него платить не нужно.</strong></p>
+        <div class="enhancer-price">Без доплаты</div>
+        <a class="btn btn-dark" href="https://t.me/pujaevstone/404" target="_blank" rel="noopener">Подробнее</a>
+      </article>
+
+      <article class="enhancer-card dark reveal">
+        <div class="tag">Дополнительная работа</div>
+        <h3>Зарядка / оживление талисмана</h3>
+        <p>Для такого изделия я подбираю подходящие камни под выбранный запрос и провожу зарядку.</p>
+        <p>Зарядку я провожу с помощью потоков энергии и единства четырёх стихий. Это помогает задать талисману определённую цель и настроить его под ваш запрос.</p>
+        <div class="enhancer-price">5 000 ₽</div>
+        <a class="btn btn-gold" href="https://t.me/pujaevstone/425?single" target="_blank" rel="noopener">Выбрать запрос</a>
+      </article>
+
+      <article class="enhancer-card reveal">
+        <div class="tag">Подбор камней</div>
+        <h3>Персональный подбор</h3>
+        <p>Я подбираю комбинацию минералов по одному или нескольким параметрам.</p>
+        <ul class="enhancer-list">
+          <li>анализ чакр;</li>
+          <li>нумерология по числу души;</li>
+          <li>число жизненного пути;</li>
+          <li>знак зодиака;</li>
+          <li>компенсаторика стихий в натальной карте.</li>
+        </ul>
+        <div class="enhancer-price">2 000 ₽ — полный подбор<br><small style="font:inherit;font-size:15px">500 ₽ — каждый параметр отдельно</small></div>
+        <a class="btn btn-dark" href="#application">Оставить заявку</a>
+      </article>
+    </div>
+
+    
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image reveal">
+      <img src="photo_10.jpg" alt="Даниил Пужаев" loading="lazy" decoding="async">
+    </div>
+    <div class="about-copy reveal">
+      <span class="kicker">Создатель бренда</span>
+      <h2>Я — Даниил Пужаев</h2>
+      <p>Своей верой в людей я влюбляю их в себя.</p>
+      <div class="quote">«Я знаю, что каждый способен быть лучшей версией себя, а знание — высшая степень веры».</div>
+      <p>Я занимаюсь духовными практиками с 2019 года. Мне было 16 лет, когда я встал на путь осознанности.</p>
+      <p>Общался с различными людьми и убедился в том, что <strong>опыт не всегда измеряется возрастом</strong>.</p>
+      <p><strong>Моя основная деятельность сейчас</strong> — создание стильных аксессуаров из натуральных камней с помощью подбора подходящих минералов, а также проведение трансформационных игр.</p>
+    </div>
+  </div>
+</section>
+
+<section class="video-block">
+  <div class="container video-inner">
+    <img src="photo_01.jpg" alt="" loading="lazy" decoding="async">
+    <div class="video-copy reveal">
+      <span class="kicker">Знакомство</span>
+      <h2>Кто стоит за PUJAEVSTONE</h2>
+      <p>Знакомство с Даниилом Пужаевым, его подходом к камням и созданию украшений.</p>
+      <button class="btn btn-line disabled-btn" onclick="toast('Добавим видео, когда будет ссылка')">Смотреть видео</button>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="practices" id="practices">
+  <div class="container">
+    <div class="practices-head reveal">
+      <span class="kicker">Услуги и практики</span>
+      <h2>Не только украшения</h2>
+      <p>Помимо работы с камнями и создания украшений, я провожу практики и трансформационные форматы.</p>
+    </div>
+
+    <div class="practices-grid">
+      <article class="practice-card reveal">
+        <div>
+          <span class="kicker">Практика</span>
+          <h3>Медитации</h3>
+          <p>Медитативные практики для внутренней настройки, внимания к себе и работе с состоянием.</p>
+        </div>
+        <a class="btn btn-dark"href="#" onclick="openContactChoice(event)">Узнать подробнее</a>
+      </article>
+
+      <article class="practice-card reveal">
+        <div>
+          <span class="kicker">Формат работы</span>
+          <h3>Трансформационные игры</h3>
+          <p>Игровой формат для работы с личным запросом, поиском новых решений и осознаний.</p>
+        </div>
+        <a class="btn btn-dark"href="#" onclick="openContactChoice(event)">Записаться</a>
+      </article>
+
+      <article class="practice-card reveal">
+        <div>
+          <span class="kicker">Практика / марафон</span>
+          <h3>Чакры</h3>
+          <p>Практики и марафон по теме чакр. Подробное описание программы можно добавить отдельным блоком позже.</p>
+        </div>
+        <a class="btn btn-dark"href="#" onclick="openContactChoice(event)">Узнать подробнее</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="application" id="application">
+  <div class="container application-grid">
+    <div class="application-copy reveal">
+      <span class="kicker">Индивидуальное украшение</span>
+      <h2>Оставьте заявку на создание</h2>
+      <p>Расскажите, какое украшение хотите, какой запрос для вас важен и что вам нравится визуально. После заполнения вы сможете выбрать, куда отправить подготовленную заявку — в Telegram или MAX.</p>
+    </div>
+
+    <form class="application-card reveal" id="applicationForm" onsubmit="submitApplication(event)">
+      <div class="form-grid">
+        <div class="field">
+          <label for="clientName">Имя</label>
+          <input id="clientName" name="clientName" type="text" placeholder="Как к вам обращаться" required>
+        </div>
+
+        <div class="field">
+          <label for="contact">Телефон или @username</label>
+          <input id="contact" name="contact" type="text" placeholder="+7... или @username" required>
+        </div>
+
+        <div class="field">
+          <label for="budget">Бюджет на украшение</label>
+          <select id="budget" name="budget">
+            <option value="Не указан">Не определился(ась)</option>
+            <option value="До 5 000 ₽">До 5 000 ₽</option>
+            <option value="5 000–10 000 ₽">5 000–10 000 ₽</option>
+            <option value="10 000–20 000 ₽">10 000–20 000 ₽</option>
+            <option value="От 20 000 ₽">От 20 000 ₽</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="requestType">Что интересует</label>
+          <select id="requestType" name="requestType">
+            <option value="Индивидуальное украшение">Индивидуальное украшение</option>
+            <option value="Подбор минералов">Подбор минералов</option>
+            <option value="Зарядка / оживление талисмана">Зарядка / оживление талисмана</option>
+            <option value="Готовое изделие из каталога">Готовое изделие из каталога</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="intention">Какой запрос сейчас важен</label>
+          <select id="intention" name="intention">
+            <option value="Не выбрал(а)">Пока не выбрал(а)</option>
+            <option value="Защита">Защита</option>
+            <option value="Финансы">Финансы</option>
+            <option value="Любовь">Любовь</option>
+            <option value="Удача">Удача</option>
+            <option value="Самореализация">Самореализация</option>
+            <option value="Духовное развитие">Духовное развитие</option>
+            <option value="Исполнение желаний">Исполнение желаний</option>
+            <option value="Другой запрос">Другой запрос</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="wish">Пожелания к изделию</label>
+          <textarea id="wish" name="wish" placeholder="Цвета, форма, любимые камни, что точно нравится или не нравится, размер, любые важные детали"></textarea>
+        </div>
+      </div>
+
+      <p class="form-hint">После нажатия текст заявки скопируется, а затем можно будет выбрать Telegram или MAX. Останется только вставить сообщение и отправить.</p>
+      <button class="btn btn-dark" type="submit">Отправить заявку</button>
+    </form>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="kicker">Контакты</span>
+      <h2>Начать с личного сообщения</h2>
+      <p>По индивидуальному подбору и заказу можно написать мне в Telegram или MAX — выбирайте, где удобнее.</p>
+      <a class="btn btn-dark"href="#" onclick="openContactChoice(event)">Telegram · @bogach8245</a>
+    </div>
+    <div class="contact-links reveal">
+      <ahref="#" onclick="openContactChoice(event)"><span>MAX · личные сообщения</span><span>↗</span></a>
+      <a href="tel:+79934451552"><span>Телефон</span><span>+7 993 445-15-52</span></a>
+      <a href="https://t.me/pujaevstone" target="_blank" rel="noopener"><span>Telegram-канал</span><span>↗</span></a>
+      <a href="https://www.instagram.com/pujaevstone_daniil?stkn=cWY0c2R0enN1d2Ny" target="_blank" rel="noopener"><span>Instagram</span><span>↗</span></a>
+      <a href="https://max.ru/channel_PujaevStone" target="_blank" rel="noopener"><span>MAX-канал</span><span>↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> PUJAEVSTONE</span>
+    <span>Авторские украшения из натуральных камней</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function toast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2300);
+}
+
+
+
+function scrollCollections(direction){
+  const el=document.getElementById('collectionsCarousel');
+  if(!el) return;
+  const amount=Math.min(el.clientWidth*0.85,350);
+  el.scrollBy({left:direction*amount,behavior:'smooth'});
+}
+
+function chooseCollection(card){
+  document.querySelectorAll('.collection-card').forEach(x=>x.classList.remove('active'));
+  card.classList.add('active');
+  const value=card.dataset.collection;
+  const label=document.getElementById('collectionSelected');
+  if(label) label.innerHTML='Вы выбрали коллекцию: <b>'+value+'</b>. Изделия добавим сюда позже.';
+}
+
+function scrollIntent(direction){
+  const el=document.getElementById('intentCarousel');
+  const amount=Math.min(el.clientWidth*0.85,360);
+  el.scrollBy({left:direction*amount,behavior:'smooth'});
+}
+
+const INTENT_DESCRIPTIONS = {"Финансы": "Для тех, кто пашет, но деньги будто утекают сквозь пальцы, кто боится поднять чек и не видит возможностей там, где они есть. Талисман помогает держать фокус: чтобы усилия окупались, а ресурсы работали на тебя, а не против.", "Любовь": "Для тех, кому не хватает простого тепла, кто обжигался и теперь боится доверять, или кто застрял в отношениях без нежности. Талисман снимает внутреннее напряжение: чтобы ты смог впустить в жизнь то, что по-настоящему ценно.", "Удача": "Для тех, кто вечно оказывается «почти вовремя», но пропускает шансы из-за сомнений и чувствует, что удача всегда на шаг впереди. Талисман ловит нужный момент: помогает замечать возможности и действовать без промедления, развивает решимость.", "Самореализация": "Для тех, кто знает, что способен на большее, но теряется в выборе, откладывает старт и не может довести дело до конца. Талисман возвращает ясность и энергию: чтобы ты чётко видел свой путь и уверенно его проходил.", "Защита": "Это для тех, кто каждый день будто в обороне: коллеги давят, родственники обижают, в ленте сплошной негатив — и к вечеру ты пустой. Талисман тут не про «сражаться», а про «мне не надо всё это тащить». Это как плотные шторы: снаружи шум, а внутри — спокойно, твои силы остаются при тебе. Подойдёт, если хочется просто выдохнуть и не отдавать энергию тем, кто её тянет.", "Духовное развитие": "Талисман для того, чтобы получать важный опыт для души и взращивать свой Дух, исцеляя гордыню."};
+
+function chooseIntent(card){
+  document.querySelectorAll('.intent-card').forEach(x=>x.classList.remove('active'));
+  card.classList.add('active');
+  const value=card.dataset.intent;
+  const label=document.getElementById('intentSelected');
+  if(label) label.innerHTML='Вы выбрали: <b>'+value+'</b>';
+  }
+
+  const select=document.getElementById('intention');
+  if(select){
+    for(const option of select.options){
+      if(option.value===value){
+        select.value=value;
+        break;
+      }
+    }
+  }
+}
+
+async function submitApplication(e){
+  e.preventDefault();
+  const name=document.getElementById('clientName').value.trim();
+  const contact=document.getElementById('contact').value.trim();
+  const budget=document.getElementById('budget').value;
+  const type=document.getElementById('requestType').value;
+  const intention=document.getElementById('intention').value;
+  const wish=document.getElementById('wish').value.trim() || 'Не указаны';
+
+  const message=`Здравствуйте! Хочу оставить заявку на индивидуальное украшение.
+
+Имя: ${name}
+Контакт: ${contact}
+Что интересует: ${type}
+Бюджет: ${budget}
+Запрос: ${intention}
+Пожелания к изделию: ${wish}`;
+
+  await copyContactMessage(message);
+  if(typeof toast==="function") toast('Заявка скопирована — выберите Telegram или MAX');
+  openContactChoice(null, message);
+}
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('visible');
+  }),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}else{
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+}
+
+const PS_ASSIST_STEPS = {
+  home: {
+    eyebrow: "Персональный помощник",
+    title: "Добро пожаловать ✨",
+    lead: "Я помогу подобрать вариант под ваш запрос. С чего начнём?",
+    options: [
+      ["Подобрать талисман или украшение","jewelry","primary"],
+      ["Я за работой по Роду","rod",""],
+      ["Выбрать медитацию","meditation",""],
+      ["Открытие и активация чакр","chakras",""],
+      ["Хочу всё и сразу","all","accent"],
+      ["Не знаю, что выбрать — помоги","help",""]
+    ]
+  },
+  jewelry: {
+    eyebrow: "Талисман или украшение",
+    title: "Что вам сейчас ближе?",
+    lead: "Выберите направление — я подскажу, куда перейти дальше.",
+    options: [
+      ["Талисман для цели","intent","primary"],
+      ["Выбрать украшение","catalog",""],
+      ["Индивидуальный подбор","application",""]
+    ]
+  },
+  rod: {
+    eyebrow: "Работа по Роду",
+    title: "Выберите формат",
+    lead: "Направления работы по Роду.",
+    options: [
+      ["Хочу на трансформационную игру","telegram_rod_game",""],
+      ["Индивидуальная работа","telegram_rod_individual",""],
+      ["Работа с Родом с помощью природных минералов — авторское","telegram_rod_minerals",""]
+    ]
+  },
+  meditation: {
+    eyebrow: "Медитации",
+    title: "Что хочется выбрать?",
+    lead: "Можно перейти к одному направлению или написать мне, если нужна помощь с выбором.",
+    options: [
+      ["Классические медитации","telegram_meditation_classic",""],
+      ["Для работы с Родом","telegram_meditation_rod",""],
+      ["Медитативные истории","telegram_meditation_stories",""],
+      ["Наполнение от камней и кристаллов","telegram_meditation_stones",""],
+      ["Доступ к библиотеке","telegram_meditation_library",""],
+      ["Попробовать по одной","telegram_meditation_one",""],
+      ["Всё и сразу","telegram_meditation_all","accent"]
+    ]
+  },
+  chakras: {
+    eyebrow: "Чакры",
+    title: "Выберите формат",
+    lead: "Направления по теме чакр.",
+    options: [
+      ["Анализ чакр по дате рождения","telegram_chakras_analysis",""],
+      ["7-дневный марафон по очищению и активации энергоцентров","telegram_chakras_marathon",""],
+      ["Чакровый браслет","telegram_chakras_bracelet",""]
+    ]
+  },
+  intent: {
+    eyebrow: "Талисман для цели",
+    title: "Какой запрос сейчас важнее?",
+    lead: "Выберите направление. После выбора я перенесу его в заявку на сайте.",
+    options: [
+      ["Защита","pick_intent_Защита",""],
+      ["Финансы","pick_intent_Финансы",""],
+      ["Любовь","pick_intent_Любовь",""],
+      ["Удача","pick_intent_Удача",""],
+      ["Самореализация","pick_intent_Самореализация",""],
+      ["Духовное развитие","pick_intent_Духовное развитие",""],
+      ["Исполнение желаний","pick_intent_Исполнение желаний",""]
+    ]
+  }
+};
+
+let psAssistHistory = [];
+
+function psAssistOpen(){
+  document.getElementById("psAssistBackdrop").classList.add("show");
+  document.getElementById("psAssistPanel").classList.add("show");
+  document.body.classList.add("lock");
+  const body=document.getElementById("psAssistBody");
+  if(!body.innerHTML.trim()) psAssistRender("home",false);
+}
+function psAssistClose(){
+  document.getElementById("psAssistBackdrop").classList.remove("show");
+  document.getElementById("psAssistPanel").classList.remove("show");
+  document.body.classList.remove("lock");
+}
+function psAssistRender(step, push=true){
+  const data=PS_ASSIST_STEPS[step];
+  if(!data) return;
+  if(push) psAssistHistory.push(step);
+  else if(!psAssistHistory.length) psAssistHistory=["home"];
+
+  const options=data.options.map(o=>{
+    const cls=o[2] ? " "+o[2] : "";
+    return `<button class="ps-assist-option${cls}" type="button" onclick="psAssistChoose('${o[1]}','${o[0].replace(/'/g,"\\'")}')">${o[0]}</button>`;
+  }).join("");
+
+  const back = step!=="home" ? `<button class="ps-assist-back" type="button" onclick="psAssistBack()">← Назад</button>` : "";
+
+  document.getElementById("psAssistBody").innerHTML=`
+    <div class="ps-assist-eyebrow">${data.eyebrow}</div>
+    <h2 class="ps-assist-title">${data.title}</h2>
+    <p class="ps-assist-lead"><strong>${data.lead}</strong></p>
+    <div class="ps-assist-options">${options}</div>
+    <div class="ps-assist-actions">${back}</div>
+    <div class="ps-assist-mini">Помощник работает прямо на сайте и не передаёт данные на сервер.</div>
+  `;
+}
+function psAssistBack(){
+  if(psAssistHistory.length>1) psAssistHistory.pop();
+  const prev=psAssistHistory[psAssistHistory.length-1] || "home";
+  const data=PS_ASSIST_STEPS[prev];
+  if(data){
+    const current=[...psAssistHistory];
+    psAssistHistory=current.slice(0,-1);
+    psAssistRender(prev,true);
+  }
+}
+function psAssistChoose(action,label){
+  if(PS_ASSIST_STEPS[action]){
+    psAssistRender(action,true);
+    return;
+  }
+
+  if(action==="catalog"){
+    psAssistClose();
+    setTimeout(()=>document.getElementById("catalog")?.scrollIntoView({behavior:"smooth"}),180);
+    return;
+  }
+  if(action==="application"){
+    psAssistClose();
+    setTimeout(()=>document.getElementById("application")?.scrollIntoView({behavior:"smooth"}),180);
+    return;
+  }
+  if(action==="all"){
+    psAssistResult(
+      "Хочу всё и сразу",
+      "Можно обсудить несколько направлений в одном сообщении.",
+      "Написать мне",
+      "Здравствуйте! На сайте выбрал(а) «Хочу всё и сразу». Хочу узнать подробнее обо всех направлениях PUJAEVSTONE."
+    );
+    return;
+  }
+  if(action==="help"){
+    psAssistResult(
+      "Помогу определиться",
+      "Напишите, что сейчас для вас важнее всего — украшение, состояние, практика или личный запрос.",
+      "Помочь мне выбрать",
+      "Здравствуйте! Я прошёл(ла) помощника на сайте и пока не знаю, что выбрать. Помогите, пожалуйста, определиться."
+    );
+    return;
+  }
+
+  if(action.startsWith("pick_intent_")){
+    const value=action.replace("pick_intent_","");
+    const select=document.getElementById("intention");
+    if(select){
+      for(const option of select.options){
+        if(option.value===value){select.value=value;break;}
+      }
+    }
+    document.querySelectorAll(".intent-card").forEach(card=>{
+      card.classList.toggle("active",card.dataset.intent===value);
+    });
+    const labelNode=document.getElementById("intentSelected");
+    if(labelNode) labelNode.innerHTML='Вы выбрали: <b>'+value+'</b>';
+    psAssistResult(
+      value,
+      "Запрос выбран. Можно перейти к заявке на индивидуальное украшение — он уже подставлен в форму.",
+      "Перейти к заявке",
+      null,
+      "application"
+    );
+    return;
+  }
+
+  const telegramMap={
+    telegram_rod_game:["Трансформационная игра","Здравствуйте! На сайте выбрал(а) «Хочу на трансформационную игру» в направлении работы по Роду."],
+    telegram_rod_individual:["Индивидуальная работа","Здравствуйте! На сайте выбрал(а) индивидуальную работу по Роду. Хочу узнать подробнее."],
+    telegram_rod_minerals:["Работа с Родом с помощью природных минералов","Здравствуйте! На сайте выбрал(а) авторскую работу с Родом с помощью природных минералов. Хочу узнать подробнее."],
+    telegram_meditation_classic:["Классические медитации","Здравствуйте! На сайте выбрал(а) классические медитации. Хочу узнать подробнее."],
+    telegram_meditation_rod:["Медитации для работы с Родом","Здравствуйте! На сайте выбрал(а) медитации для работы с Родом. Хочу узнать подробнее."],
+    telegram_meditation_stories:["Медитативные истории","Здравствуйте! На сайте выбрал(а) медитативные истории. Хочу узнать подробнее."],
+    telegram_meditation_stones:["Наполнение от камней и кристаллов","Здравствуйте! На сайте выбрал(а) наполнение от камней и кристаллов. Хочу узнать подробнее."],
+    telegram_meditation_library:["Доступ к библиотеке","Здравствуйте! На сайте выбрал(а) доступ к библиотеке медитаций. Хочу узнать подробнее."],
+    telegram_meditation_one:["Попробовать по одной","Здравствуйте! На сайте выбрал(а) попробовать медитации по одной. Хочу узнать подробнее."],
+    telegram_meditation_all:["Все медитации","Здравствуйте! На сайте выбрал(а) «Всё и сразу» в разделе медитаций. Хочу узнать подробнее."],
+    telegram_chakras_analysis:["Анализ чакр по дате рождения","Здравствуйте! На сайте выбрал(а) анализ чакр по дате рождения. Хочу узнать подробнее."],
+    telegram_chakras_marathon:["7-дневный марафон","Здравствуйте! На сайте выбрал(а) 7-дневный марафон по очищению и активации энергоцентров. Хочу узнать подробнее."],
+    telegram_chakras_bracelet:["Чакровый браслет","Здравствуйте! На сайте выбрал(а) чакровый браслет. Хочу узнать подробнее."]
+  };
+
+  if(telegramMap[action]){
+    psAssistResult(telegramMap[action][0],"Можно продолжить в личном Telegram.", "Написать мне",telegramMap[action][1]);
+  }
+}
+function psAssistResult(title,text,buttonLabel,message,anchor){
+  document.getElementById("psAssistBody").innerHTML=`
+    <div class="ps-assist-eyebrow">Результат</div>
+    <h2 class="ps-assist-title">${title}</h2>
+    <div class="ps-assist-result">
+      <strong>Следующий шаг</strong>
+      ${text}
+    </div>
+    <div class="ps-assist-actions">
+      <button class="btn btn-gold" type="button" id="psAssistFinal">${buttonLabel}</button>
+      <a class="btn btn-line" id="psAssistMax"href="#" onclick="openContactChoice(event)">Написать в MAX</a>
+      <button class="ps-assist-back" type="button" onclick="psAssistBack()">← Назад</button>
+    </div>
+    <div class="ps-assist-mini">Вы всегда можете вернуться назад и выбрать другой вариант.</div>
+  `;
+  document.getElementById("psAssistFinal").onclick=()=>{
+    if(anchor){
+      psAssistClose();
+      setTimeout(()=>document.getElementById(anchor)?.scrollIntoView({behavior:"smooth"}),180);
+    }else{
+      psAssistTelegram(message || "Здравствуйте! Хочу узнать подробнее.");
+    }
+  };
+}
+async function psAssistTelegram(message){
+  await copyContactMessage(message || "Здравствуйте! Хочу узнать подробнее.");
+  if(typeof toast==="function") toast("Сообщение скопировано — выберите Telegram или MAX");
+  openContactChoice(null, message || "Здравствуйте! Хочу узнать подробнее.");
+}
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape" && document.getElementById("psAssistPanel")?.classList.contains("show")) psAssistClose();
+});
+
+
+let contactPendingMessage = "";
+
+function openContactChoice(event, message){
+  if(event) event.preventDefault();
+  contactPendingMessage = message || "";
+  const note = document.getElementById("contactChoiceNote");
+  if(note){
+    note.textContent = contactPendingMessage
+      ? "Текст сообщения уже скопирован. Выберите удобный мессенджер и вставьте его."
+      : "Выберите удобный мессенджер.";
+  }
+  document.getElementById("contactChoice").classList.add("show");
+  document.body.classList.add("lock");
+}
+
+function closeContactChoice(){
+  document.getElementById("contactChoice").classList.remove("show");
+  document.body.classList.remove("lock");
+}
+
+async function copyContactMessage(message){
+  if(!message) return;
+  try{
+    await navigator.clipboard.writeText(message);
+  }catch(e){
+    const ta=document.createElement("textarea");
+    ta.value=message;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    ta.remove();
+  }
+}
+
+</script>
+
+<button class="ps-assist-fab" id="psAssistFab" type="button" onclick="psAssistOpen()">
+  <b>✦</b><span>Помочь мне выбрать</span>
+</button>
+
+<div class="ps-assist-backdrop" id="psAssistBackdrop" onclick="psAssistClose()"></div>
+
+<aside class="ps-assist-panel" id="psAssistPanel" aria-label="Персональный помощник PUJAEVSTONE">
+  <div class="ps-assist-top">
+    <div class="ps-assist-brand">PUJAEV<span>STONE.</span></div>
+    <button class="ps-assist-close" type="button" onclick="psAssistClose()" aria-label="Закрыть">×</button>
+  </div>
+  <div class="ps-assist-body" id="psAssistBody">
+  <div class="ps-assist-eyebrow">Персональный помощник</div>
+  <h2 class="ps-assist-title">Добро пожаловать ✨</h2>
+  <p class="ps-assist-lead"><strong>Я помогу подобрать вариант под ваш запрос. С чего начнём?</strong></p>
+  <div class="ps-assist-options">
+    <button class="ps-assist-option primary" type="button" onclick="psAssistChoose('jewelry','Подобрать талисман или украшение')">Подобрать талисман или украшение</button>
+    <button class="ps-assist-option" type="button" onclick="psAssistChoose('rod','Я за работой по Роду')">Я за работой по Роду</button>
+    <button class="ps-assist-option" type="button" onclick="psAssistChoose('meditation','Выбрать медитацию')">Выбрать медитацию</button>
+    <button class="ps-assist-option" type="button" onclick="psAssistChoose('chakras','Открытие и активация чакр')">Открытие и активация чакр</button>
+    <button class="ps-assist-option accent" type="button" onclick="psAssistChoose('all','Хочу всё и сразу')">Хочу всё и сразу</button>
+    <button class="ps-assist-option" type="button" onclick="psAssistChoose('help','Не знаю, что выбрать — помоги')">Не знаю, что выбрать — помоги</button>
+  </div>
+  <div class="ps-assist-mini">Выберите один из вариантов — дальше помощник покажет следующий шаг.</div>
+</div>
+</aside>
+
+
+<div class="contact-choice" id="contactChoice">
+  <div class="contact-choice-backdrop" onclick="closeContactChoice()"></div>
+  <div class="contact-choice-card">
+    <button class="contact-choice-close" type="button" onclick="closeContactChoice()">×</button>
+    <h3>Куда написать?</h3>
+    <p id="contactChoiceNote">Выберите удобный мессенджер.</p>
+    <div class="contact-choice-buttons">
+      <a class="btn btn-gold" id="contactChoiceTg" onclick="closeContactChoice()"href="#" onclick="openContactChoice(event)">Telegram</a>
+      <a class="btn btn-line" id="contactChoiceMax" href="https://max.ru/u/f9LHodD0cOLDumVDoCFZogtNAgk9BpHp-lc85ZOycxitj9tc8EWAgfYvRAs" target="_blank" rel="noopener" onclick="if(contactPendingMessage)copyContactMessage(contactPendingMessage);closeContactChoice()">MAX</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
